@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Mi aplicación asignaturas</title>
+</head>
+
+<body>
+	Lista de asignaturas:
+	<table border='1'>
+		<th:block th:each="per : ${listaAsignaturas}">
+			<tr>
+				<td th:text="${per.id}"></td>
+				<td th:text="${per.nombre}"></td>
+				<td th:text="${per.descripcion}"></td>
+				<td th:text="${per.curso}"></td>
+			</tr>
+		</th:block>
+	</table>
+</body>
+
+</html>

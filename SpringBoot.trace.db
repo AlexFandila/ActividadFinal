@@ -1,0 +1,12 @@
+2022-03-14 11:58:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "ASIGNATURA" no encontrada
+Table "ASIGNATURA" not found; SQL statement:
+insert into asignatura (id, nombre, descripcion, curso) select 1, 'Lengua', 'Asignatura de lengua', 2 from dual where not exists (select 1 from asignatura where id = 1) [42102-200]
+2022-03-14 12:45:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM ROL USUARIO USUARIO[*]"
+Syntax error in SQL statement "SELECT * FROM ROL USUARIO USUARIO[*]"; SQL statement:
+SELECT * FROM ROL USUARIO USUARIO [42000-200]
+2022-03-14 12:45:16 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SELECT * FROM ROL USUARIO USUARIO[*]"
+Syntax error in SQL statement "SELECT * FROM ROL USUARIO USUARIO[*]"; SQL statement:
+SELECT * FROM ROL USUARIO USUARIO [42000-200]
