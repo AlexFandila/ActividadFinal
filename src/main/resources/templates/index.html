@@ -9,7 +9,7 @@
 <body>
 	<b>INICIO:</b> Aplicación <b>asignaturas</b>.
 	<ul> MENÚ:
-		<li> <a href="/app/asignaturas">listar asignaturas</a> </li>
+		<li th:if="${usuario.rol.rol == 'ADMIN'}"> <a href="/app/asignaturas">listar asignaturas</a> </li>
 		<li> <a href="/app/roladmin">listar usuario rol admin</a> </li>
 		<li> <a href="/app/rolconsultar">listar usuario rol consulta</a> </li>
 	</ul>

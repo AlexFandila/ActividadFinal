@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,13 @@ public class AsignaturaController {
 
 	@Autowired
 	UsuarioService usuarioService;
+	
+	@GetMapping("/")
+	public String index(Model model) {
+		Usuario u = (Usuario) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		model.addAttribute("usuario", u);
+		return "index";
+	}
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/asignaturas")
