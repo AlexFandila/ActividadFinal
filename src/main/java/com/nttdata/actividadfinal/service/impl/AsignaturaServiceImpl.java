@@ -20,4 +20,34 @@ public class AsignaturaServiceImpl implements AsignaturaService{
 		return asignaturaDAO.findAll();
 	}
 
+	@Override
+	public Asignatura getById(Integer id) {
+		return asignaturaDAO.findById(id).get();
+	}
+
+	@Override
+	public void eliminarTodos() {
+		asignaturaDAO.deleteAll();
+		
+	}
+
+	@Override
+	public void deleteById(Integer id) {
+		asignaturaDAO.deleteById(id);
+		
+	}
+
+	@Override
+	public Asignatura modificar(Asignatura asignatura) {
+		asignaturaDAO.save(asignatura);
+		return asignatura;
+	}
+
+	@Override
+	public Asignatura insertar(Asignatura asignatura) {
+		Asignatura asig = asignaturaDAO.save(asignatura);
+		return asig;
+	}
+	
+
 }

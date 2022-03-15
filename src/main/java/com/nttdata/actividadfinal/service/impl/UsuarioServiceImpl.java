@@ -1,6 +1,5 @@
 package com.nttdata.actividadfinal.service.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +41,8 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService{
 	@Override
 	public List<Usuario> buscarPorUsuarioAdmin() {
 		
-		Rol rol = rolDAO.findByRol("ADMIN");
-		List<Usuario> usuariosAdmin = usuarioDAO.findByRol(rol);
+//		Rol rol = rolDAO.findByRol("ADMIN");
+		List<Usuario> usuariosAdmin = usuarioDAO.findByRol(new Rol(1, "ADMIN"));
 
 		
 		return usuariosAdmin;
@@ -52,8 +51,8 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService{
 	@Override
 	public List<Usuario> buscarPorUsuarioConsultar() {
 		
-		Rol rol = rolDAO.findByRol("CONSULTA");
-		List<Usuario> usuariosConsultar = usuarioDAO.findByRol(rol);
+//		Rol rol = rolDAO.findByRol("CONSULTA");
+		List<Usuario> usuariosConsultar = usuarioDAO.findByRol(new Rol(2, "CONSULTA"));
 		
 		return usuariosConsultar;
 	}

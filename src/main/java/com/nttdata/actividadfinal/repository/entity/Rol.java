@@ -10,6 +10,15 @@ import org.springframework.security.core.GrantedAuthority;
 @Entity
 @Table
 public class Rol implements GrantedAuthority{
+	
+	public Rol() {
+		
+	}
+	
+	public Rol(Integer id, String rol) {
+		this.id = id;
+		this.rol = rol;
+	}
 
 	@Id
 	@Column
