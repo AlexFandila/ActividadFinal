@@ -27,31 +27,6 @@ public class AsignaturaRestController {
 	@Autowired
 	AsignaturaService asignaturaService;
 
-//	@CacheEvict(value = "empleados", allEntries = true)
-//	@PostMapping
-//	public ResponseEntity<Empleado> insertarEmpleado_v3(@RequestBody Empleado empleado) {
-//		try {
-//			HttpHeaders headers = new HttpHeaders();
-//			if (empleado.getId() != null) {
-//				headers.set("Message", "Para dar de alta un nuevo empleado, el ID debe llegar vacío");
-//				return new ResponseEntity<>(headers, HttpStatus.NOT_ACCEPTABLE);
-//			} else if (empleado.getNombre() == null || empleado.getNombre().equals("")
-//					|| empleado.getApellidos() == null || empleado.getApellidos().equals("")) {
-//				headers.set("Message", "Ni NOMBRE ni APELLIDOS pueden ser nulos");
-//				return new ResponseEntity<>(headers, HttpStatus.NOT_ACCEPTABLE);
-//			}
-//
-//			Empleado emp = empleadoService.inserta(empleado);
-//			URI newPath = new URI("/api/empleados/" + emp.getId());
-//			headers.setLocation(newPath);
-//			headers.set("Message", "Empleado insertado correctamente con id: " + emp.getId());
-//
-//			return new ResponseEntity<>(emp, headers, HttpStatus.CREATED);
-//		} catch (Exception ex) {
-//			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-//		}
-//	}
-
 	@Cacheable(value = "asignatura")
 	@GetMapping
 	public ResponseEntity<List<Asignatura>> consultarTodos() {
